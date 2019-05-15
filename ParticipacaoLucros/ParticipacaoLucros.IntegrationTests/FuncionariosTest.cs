@@ -34,5 +34,20 @@ namespace ParticipacaoLucros.IntegrationTests
             //Assert
             response.IsSuccessful.Should().BeTrue();
         }
+
+        [Fact]
+        public void AddOrUpdate_Should_FailOnInvalidRequest()
+        {
+            //Arrange
+            var request = new RestRequest("Funcionarios", Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            response.IsSuccessful.Should().BeFalse();
+        }
     }
 }
