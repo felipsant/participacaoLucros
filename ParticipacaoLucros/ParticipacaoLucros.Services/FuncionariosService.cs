@@ -1,4 +1,5 @@
 ﻿using ParticipacaoLucros.Models;
+using ParticipacaoLucros.Services.Helpers;
 using RestSharp;
 using System;
 using System.Collections.Generic;

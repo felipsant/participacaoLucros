@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace ParticipacaoLucros.UnitTests.Helper
+namespace ParticipacaoLucros.UnitTests.Helpers
 {
     public static class NSubstituteHttpRequest
     {

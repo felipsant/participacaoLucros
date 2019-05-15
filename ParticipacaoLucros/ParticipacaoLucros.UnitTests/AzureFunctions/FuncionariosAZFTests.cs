@@ -9,7 +9,7 @@ using NSubstitute;
 using ParticipacaoLucros.AzureFunctions;
 using ParticipacaoLucros.Models;
 using ParticipacaoLucros.Services;
-using ParticipacaoLucros.UnitTests.Helper;
+using ParticipacaoLucros.UnitTests.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;

@@ -11,7 +11,7 @@ using ParticipacaoLucros.Models;
 using System.Collections.Generic;
 using ParticipacaoLucros.Services;
 using AzureFunctions.Autofac;
-using ParticipacaoLucros.AzureFunctions.Helper;
+using ParticipacaoLucros.AzureFunctions.Helpers;
 
 namespace ParticipacaoLucros.AzureFunctions
 {

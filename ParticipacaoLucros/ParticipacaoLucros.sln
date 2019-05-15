@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.AzureFun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.Services", "ParticipacaoLucros.Services\ParticipacaoLucros.Services.csproj", "{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.IntegrationTests", "ParticipacaoLucros.IntegrationTests\ParticipacaoLucros.IntegrationTests.csproj", "{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.IntegrationTests", "ParticipacaoLucros.IntegrationTests\ParticipacaoLucros.IntegrationTests.csproj", "{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{05D02F0F-9C53-476E-862E-C659CD85FCB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E0208FB-58A5-4C4E-9BB0-586C4271C96F} = {05D02F0F-9C53-476E-862E-C659CD85FCB9}
+		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA} = {05D02F0F-9C53-476E-862E-C659CD85FCB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD0734B2-CF80-4F64-AB3D-9B95C07899D2}

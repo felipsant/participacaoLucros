@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParticipacaoLucros.Services
+namespace ParticipacaoLucros.Services.Helpers
 {
     public class Firebase
     {

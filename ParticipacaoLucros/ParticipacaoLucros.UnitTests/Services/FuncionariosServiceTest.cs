@@ -7,7 +7,7 @@ using RestSharp;
 using System.Collections.Generic;
 using Xunit;
 
-namespace ParticipacaoLucros.UnitTests
+namespace ParticipacaoLucros.UnitTests.Services
 {
     public class FuncionariosServiceTest
     {

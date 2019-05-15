@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParticipacaoLucros.AzureFunctions.Helper
+namespace ParticipacaoLucros.AzureFunctions.Helpers
 {
     public class DIConfig
     {
