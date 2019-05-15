@@ -16,18 +16,20 @@ namespace ParticipacaoLucros.AzureFunctions
     {
         [FunctionName("Lucros")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] List<Funcionario> req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-            try
-            {
-                return (ActionResult)new OkObjectResult($"Hello");
-            }
-            catch (Exception ex)
-            {
-                return new BadRequestObjectResult("Please pass a name on the query string or in the request body");
-            }
+
+            string name = req.Query["name"];
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            name = name ?? data?.name;
+
+            return name != null
+                ? (ActionResult)new OkObjectResult($"Hello, {name}")
+                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
     }
 }

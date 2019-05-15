@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.UnitTests", "ParticipacaoLucros.UnitTests\ParticipacaoLucros.UnitTests.csproj", "{7E0208FB-58A5-4C4E-9BB0-586C4271C96F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.UnitTests", "ParticipacaoLucros.UnitTests\ParticipacaoLucros.UnitTests.csproj", "{7E0208FB-58A5-4C4E-9BB0-586C4271C96F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.IntegrationTests", "ParticipacaoLucros.IntegrationTests\ParticipacaoLucros.IntegrationTests.csproj", "{DB40A941-22B8-4229-A278-95000962ED01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.Models", "ParticipacaoLucros.Models\ParticipacaoLucros.Models.csproj", "{C9A702A9-F393-489F-B8CE-825890841A04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.Models", "ParticipacaoLucros.Models\ParticipacaoLucros.Models.csproj", "{C9A702A9-F393-489F-B8CE-825890841A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.AzureFunctions", "ParticipacaoLucros.AzureFunctions\ParticipacaoLucros.AzureFunctions.csproj", "{C63EB2B0-F7E6-4CCE-AA8E-1880D036CC68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.AzureFunctions", "ParticipacaoLucros.AzureFunctions\ParticipacaoLucros.AzureFunctions.csproj", "{C63EB2B0-F7E6-4CCE-AA8E-1880D036CC68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.Services", "ParticipacaoLucros.Services\ParticipacaoLucros.Services.csproj", "{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.IntegrationTests", "ParticipacaoLucros.IntegrationTests\ParticipacaoLucros.IntegrationTests.csproj", "{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		{7E0208FB-58A5-4C4E-9BB0-586C4271C96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E0208FB-58A5-4C4E-9BB0-586C4271C96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E0208FB-58A5-4C4E-9BB0-586C4271C96F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB40A941-22B8-4229-A278-95000962ED01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB40A941-22B8-4229-A278-95000962ED01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB40A941-22B8-4229-A278-95000962ED01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB40A941-22B8-4229-A278-95000962ED01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9A702A9-F393-489F-B8CE-825890841A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9A702A9-F393-489F-B8CE-825890841A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A702A9-F393-489F-B8CE-825890841A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{C63EB2B0-F7E6-4CCE-AA8E-1880D036CC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C63EB2B0-F7E6-4CCE-AA8E-1880D036CC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C63EB2B0-F7E6-4CCE-AA8E-1880D036CC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E80E8D6-D554-424C-BDF8-AEFE446AE8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
