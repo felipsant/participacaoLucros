@@ -17,10 +17,17 @@ namespace ParticipacaoLucros.UnitTests.Services
         {
             return Builder<Funcionario>.CreateListOfSize(n).TheFirst(1)
             .With(c => c.salario_bruto = "R$ 12.696,20")
+            .With(c => c.area = "Diretoria")
+            .With(c => c.data_de_admissao = "2001-01-05")
             .TheNext(1)
-            .With(c => c.salario_bruto = "R$ 1.800,00")
+            .With(c => c.salario_bruto = "R$ 3.000,00")
+            .With(c => c.area = "Contabilidade")
+            .With(c => c.cargo = "Estagiário")
+            .With(c => c.data_de_admissao = "2015-01-05")
             .TheNext(1)
             .With(c => c.salario_bruto = "R$ 998,00")
+            .With(c => c.area = "Relacionamento com o Cliente")
+            .With(c => c.data_de_admissao = "2018-01-03")
             .Build();
         }
 
@@ -67,17 +74,25 @@ namespace ParticipacaoLucros.UnitTests.Services
             //Arrange
             IList<Funcionario> lFuncionarios = getDefaultFuncionarios();
             var mockFuncionarioRepository = Substitute.For<IRepository<Funcionario>>();
+            decimal totalDisponibilizado = 100000;
 
             mockFuncionarioRepository.GetAll().
                 Returns(lFuncionarios);
             FuncionariosService fs = new FuncionariosService(mockFuncionarioRepository);
 
             //Act
-            var result = await fs.CalculaLucros();
+            var result = await fs.CalculaLucros(totalDisponibilizado);
 
             //Assert
             //TODO: WRITE one fixed return for the defaultFuncionarios
             result.total_de_funcionarios.Should().Be(lFuncionarios.Count);
+            result.participacoes.Count.Should().Be(lFuncionarios.Count);
+            result.participacoes.First().matricula.Should().NotBe(string.Empty);
+            result.participacoes.First().valor_da_participação.Should().NotBe(0);
+            result.participacoes.First().nome.Should().NotBe(string.Empty);
+            result.total_disponibilizado.Should().Be(totalDisponibilizado);
+            result.total_distribuido.Should().BeGreaterThan(0);
+            result.saldo_total_disponibilizado.Should().NotBe(0);
         }
     }
 }

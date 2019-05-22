@@ -11,6 +11,7 @@ namespace ParticipacaoLucros.Models
         public string cargo { get; set; }
         public string salario_bruto { get; set; }
         public string data_de_admissao { get; set; }
+
     }
 
     public class Participacao
@@ -22,10 +23,10 @@ namespace ParticipacaoLucros.Models
 
     public class RetornoLucros
     {
-        List<Participacao> participacoes { get; set; }
+        public List<Participacao> participacoes { get; set; }
         public int total_de_funcionarios { get; set; }
         public decimal total_distribuido { get; set; }
         public decimal total_disponibilizado { get; set; }
-        public decimal saldo_total_disponibilizado { get; set; }
+        public decimal saldo_total_disponibilizado { get { return total_disponibilizado - total_distribuido; }}
     }
 }
