@@ -19,7 +19,7 @@ namespace ParticipacaoLucros.Repositories
         }
         public bool CreateList(IEnumerable<T> entities)
         {
-            var request = new RestRequest($".json", Method.POST);
+            var request = new RestRequest($"./{typeof(T).Name}.json", Method.PUT);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(entities);
