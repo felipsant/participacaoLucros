@@ -17,22 +17,28 @@ namespace ParticipacaoLucros.IntegrationTests
         public void AddOrUpdate_Should_SendSuccessfullyRequest()
         {
             //Arrange
+            List<Funcionario> lFuncionario = getFuncionariosFromJSONFile();
+            var request = new RestRequest("Funcionarios", Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddJsonBody(lFuncionario);
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            response.IsSuccessful.Should().BeTrue();
+        }
+
+        private static List<Funcionario> getFuncionariosFromJSONFile()
+        {
             var currentDirectory = new DirectoryInfo(Environment.CurrentDirectory);
             string projectDirectory = currentDirectory.Parent.Parent.Parent.FullName;
             string jsonFile = projectDirectory + "\\" + funcionariosJson;
 
             string json = File.ReadAllText(jsonFile);
             var lFuncionario = JsonConvert.DeserializeObject<List<Funcionario>>(json);
-            var request = new RestRequest("Funcionarios", Method.POST);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("Content-Type", "application/json");
-            request.AddJsonBody(lFuncionario);
-            
-            //Act
-            IRestResponse response = client.Execute(request);
-
-            //Assert
-            response.IsSuccessful.Should().BeTrue();
+            return lFuncionario;
         }
 
         [Fact]
@@ -48,6 +54,26 @@ namespace ParticipacaoLucros.IntegrationTests
 
             //Assert
             response.IsSuccessful.Should().BeFalse();
+        }
+
+        [Fact]
+        public void GetAll_Should_ReturnSuccessfullyRequest()
+        {
+            //Arrange
+            AddOrUpdate_Should_SendSuccessfullyRequest();
+            List<Funcionario> lFuncionarioFile = getFuncionariosFromJSONFile();
+
+            var request = new RestRequest("Funcionarios", Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            response.IsSuccessful.Should().BeTrue();
+            var lFuncionario = JsonConvert.DeserializeObject<List<Funcionario>>(response.Content);
+            lFuncionario.Count.Should().Be(lFuncionarioFile.Count);
         }
     }
 }

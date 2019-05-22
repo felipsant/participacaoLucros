@@ -4,9 +4,8 @@ using NSubstitute;
 using ParticipacaoLucros.Models;
 using ParticipacaoLucros.Repositories;
 using ParticipacaoLucros.Services;
-using RestSharp;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -41,6 +40,25 @@ namespace ParticipacaoLucros.UnitTests.Services
 
             //Assert
             result.Should().Be(true);
+        }
+
+        [Fact]
+        public async Task GetAll_Should_SendSuccessfullyRequest()
+        {
+            //Arrange
+            var mockFuncionarioRepository = Substitute.For<IRepository<Funcionario>>();
+            IList<Funcionario> lFuncionarios = getDefaultFuncionarios();
+
+            mockFuncionarioRepository.GetAll().
+                Returns(lFuncionarios);
+
+            FuncionariosService fs = new FuncionariosService(mockFuncionarioRepository);
+
+            //Act
+            var result = await fs.GetAll();
+
+            //Assert
+            result.Count().Should().Be(lFuncionarios.Count);
         }
     }
 }

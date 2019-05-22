@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,26 +14,27 @@ namespace ParticipacaoLucros.Repositories
         {
             this._client = client;
         }
-        public async Task<IEnumerable<T>> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException("TODO");
+            var request = new RestRequest($"{typeof(T).Name}.json", Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+            IRestResponse response = _client.Execute(request);
+            if (!response.IsSuccessful)
+                throw new Exception($"Not Possible to get {typeof(T).Name} objects from FirebaseDB");
+
+            var content = response.Content;
+            var result = JsonConvert.DeserializeObject<IEnumerable<T>>(content);
+            return result;
         }
         public bool CreateList(IEnumerable<T> entities)
         {
-            var request = new RestRequest($"./{typeof(T).Name}.json", Method.PUT);
+            var request = new RestRequest($"{typeof(T).Name}.json", Method.PUT);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(entities);
             IRestResponse response = _client.Execute(request);
             return response.IsSuccessful;
-        }
-        public async Task Update(Guid id, T entity)
-        {
-            throw new NotImplementedException("TODO");
-        }
-        public async Task Delete(T entity)
-        {
-            throw new NotImplementedException("TODO");
         }
     }
 }

@@ -12,15 +12,18 @@ using System.Collections.Generic;
 using ParticipacaoLucros.Services;
 using AzureFunctions.Autofac;
 using ParticipacaoLucros.AzureFunctions.Helpers;
+using System.Net.Http;
+using System.Net;
+using System.Text;
 
 namespace ParticipacaoLucros.AzureFunctions
 {
     [DependencyInjectionConfig(typeof(DIConfig))]
     public static class Funcionarios
     {
-        [FunctionName("Funcionarios")]
-        public static async Task<IActionResult> AddorUpdate(
-            [HttpTrigger(AuthorizationLevel.Function, "post","put", Route = null)] HttpRequest req,
+        [FunctionName("Funcionarios_AddorUpdate")]
+        public static async Task<HttpResponseMessage> AddorUpdate(
+            [HttpTrigger(AuthorizationLevel.Function, "post","put", Route = "Funcionarios")] HttpRequest req,
             ILogger log, [Inject] IFuncionariosService funcionariosService)
         {
             try
@@ -35,18 +38,55 @@ namespace ParticipacaoLucros.AzureFunctions
 
                 bool result = await funcionariosService.AddOrUpdate(lFuncionario);
                 if (result)
-                    return (ActionResult)new OkObjectResult($"{ lFuncionario.Count.ToString() }");
+                    return new HttpResponseMessage(HttpStatusCode.OK)
+                    {
+                        Content = new StringContent(lFuncionario.Count.ToString(), Encoding.UTF8, "application/json")
+                    };
+
                 else
                     throw new Exception("Firebase returned Unsucessfully status code");
             }
             catch (Exception ex)
             {
                 log.LogError(ex.Message);
-                return new BadRequestObjectResult(ex);
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(ex.Message, Encoding.UTF8)
+                };
             }
             finally
             {
                 log.LogInformation("Funcionarios_AddorUpdate finished a request.");
+            }
+        }
+        [FunctionName("Funcionarios_GetAll")]
+        public static async Task<HttpResponseMessage> GetAll(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Funcionarios")] HttpRequest req,
+            ILogger log, [Inject] IFuncionariosService funcionariosService)
+        {
+            try
+            {
+                log.LogInformation("Funcionarios_GetAll started a request.");
+
+                var result = await funcionariosService.GetAll();
+                string json = JsonConvert.SerializeObject(result);
+
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(json, Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex.Message);
+                 return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(ex.Message, Encoding.UTF8)
+                };
+            }
+            finally
+            {
+                log.LogInformation("Funcionarios_GetAll finished a request.");
             }
         }
     }

@@ -12,6 +12,7 @@ namespace ParticipacaoLucros.Services
     public interface IFuncionariosService
     {
         Task<bool> AddOrUpdate(IEnumerable<Funcionario> lFuncionarios);
+        Task<IEnumerable<Funcionario>> GetAll();
     }
     public class FuncionariosService : IFuncionariosService
     {
@@ -32,12 +33,24 @@ namespace ParticipacaoLucros.Services
             }
         }
 
+        public async Task<IEnumerable<Funcionario>> GetAll()
+        {
+            try
+            {
+                return _funcionarioRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public async Task<RetornoLucros> CalculaLucros()
         {
             //lFuncionarios.ToList()
             try
             {
-                IEnumerable<Funcionario> LFuncionarios = await _funcionarioRepository.GetAll();
+                IEnumerable<Funcionario> LFuncionarios = _funcionarioRepository.GetAll();
                 //var mapper = new MapperConfiguration(cfg => cfg.CreateMap<List<Funcionario>, IEnumerable<Funcionario>>()
                 //.ForMember(c => c.salario_bruto, m => m.MapFrom(s => Convert.ToDecimal(s.salario_bruto.Replace("R$", "")))))
                 //                .CreateMapper();
