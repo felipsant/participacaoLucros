@@ -43,7 +43,7 @@ namespace ParticipacaoLucros.UnitTests.Services
         }
 
         [Fact]
-        public async Task GetAll_Should_SendSuccessfullyRequest()
+        public async Task GetAll_Should_ReturnSuccessfullyRequest()
         {
             //Arrange
             var mockFuncionarioRepository = Substitute.For<IRepository<Funcionario>>();
@@ -59,6 +59,25 @@ namespace ParticipacaoLucros.UnitTests.Services
 
             //Assert
             result.Count().Should().Be(lFuncionarios.Count);
+        }
+
+        [Fact]
+        public async Task CalculaLucros_Should_ReturnSuccessfullyRequest()
+        {
+            //Arrange
+            IList<Funcionario> lFuncionarios = getDefaultFuncionarios();
+            var mockFuncionarioRepository = Substitute.For<IRepository<Funcionario>>();
+
+            mockFuncionarioRepository.GetAll().
+                Returns(lFuncionarios);
+            FuncionariosService fs = new FuncionariosService(mockFuncionarioRepository);
+
+            //Act
+            var result = await fs.CalculaLucros();
+
+            //Assert
+            //TODO: WRITE one fixed return for the defaultFuncionarios
+            result.total_de_funcionarios.Should().Be(lFuncionarios.Count);
         }
     }
 }
