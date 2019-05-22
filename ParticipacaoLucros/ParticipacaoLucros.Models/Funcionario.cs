@@ -9,17 +9,23 @@ namespace ParticipacaoLucros.Models
         public string nome { get; set; }
         public string area { get; set; }
         public string cargo { get; set; }
-        public decimal salario_bruto { get; set; }
-        public DateTime data_de_admissao { get; set; }
+        public string salario_bruto { get; set; }
+        public string data_de_admissao { get; set; }
     }
 
-    public class FuncionarioDTO
+    public class Participacao
     {
         public string matricula { get; set; }
         public string nome { get; set; }
-        public string area { get; set; }
-        public string cargo { get; set; }
-        public string salario_bruto { get; set; }
-        public string data_de_admissao { get; set; }
+        public decimal valor_da_participação { get; set; }
+    }
+
+    public class RetornoLucros
+    {
+        List<Participacao> participacoes { get; set; }
+        public int total_de_funcionarios { get; set; }
+        public decimal total_distribuido { get; set; }
+        public decimal total_disponibilizado { get; set; }
+        public decimal saldo_total_disponibilizado { get; set; }
     }
 }

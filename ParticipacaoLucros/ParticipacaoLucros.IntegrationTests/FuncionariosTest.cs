@@ -22,7 +22,7 @@ namespace ParticipacaoLucros.IntegrationTests
             string jsonFile = projectDirectory + "\\" + funcionariosJson;
 
             string json = File.ReadAllText(jsonFile);
-            var lFuncionario = JsonConvert.DeserializeObject<List<FuncionarioDTO>>(json);
+            var lFuncionario = JsonConvert.DeserializeObject<List<Funcionario>>(json);
             var request = new RestRequest("Funcionarios", Method.POST);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");

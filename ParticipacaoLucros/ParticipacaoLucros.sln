@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipacaoLucros.Integrat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{05D02F0F-9C53-476E-862E-C659CD85FCB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipacaoLucros.Repositories", "ParticipacaoLucros.Repositories\ParticipacaoLucros.Repositories.csproj", "{D92338DA-3B6E-4149-BBE0-0FC0D88F10A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F9BF134-25B7-49C5-B620-A82EA87A9BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D92338DA-3B6E-4149-BBE0-0FC0D88F10A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92338DA-3B6E-4149-BBE0-0FC0D88F10A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92338DA-3B6E-4149-BBE0-0FC0D88F10A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92338DA-3B6E-4149-BBE0-0FC0D88F10A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,11 +29,11 @@ namespace ParticipacaoLucros.AzureFunctions
 
                 // Get request body
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-                var lFuncionario = JsonConvert.DeserializeObject<List<FuncionarioDTO>>(requestBody);
+                var lFuncionario = JsonConvert.DeserializeObject<List<Funcionario>>(requestBody);
                 if(lFuncionario == null || lFuncionario.Count == 0)
                     throw new Exception("FuncionariosList Cannot be Empty");
 
-                bool result = funcionariosService.AddOrUpdate(lFuncionario);
+                bool result = await funcionariosService.AddOrUpdate(lFuncionario);
                 if (result)
                     return (ActionResult)new OkObjectResult($"{ lFuncionario.Count.ToString() }");
                 else

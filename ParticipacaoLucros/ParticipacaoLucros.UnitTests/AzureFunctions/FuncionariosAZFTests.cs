@@ -24,11 +24,11 @@ namespace ParticipacaoLucros.UnitTests.AzureFunctions
         {
             //Arrange
             var mockService = Substitute.For<IFuncionariosService>();
-            mockService.AddOrUpdate(Arg.Any<IEnumerable<FuncionarioDTO>>()).Returns(true);
+            mockService.AddOrUpdate(Arg.Any<IEnumerable<Funcionario>>()).Returns(true);
 
             var mockLog = Substitute.For<ILogger>();
 
-            IList<FuncionarioDTO> lFuncionarios = Builder<FuncionarioDTO>.CreateListOfSize(2).All().Build();
+            IList<Funcionario> lFuncionarios = Builder<Funcionario>.CreateListOfSize(2).All().Build();
             var mockRequest = NSubstituteHttpRequest.CreateMockRequest(lFuncionarios);
 
             //Act
@@ -44,7 +44,7 @@ namespace ParticipacaoLucros.UnitTests.AzureFunctions
         {
             //Arrange
             var mockService = Substitute.For<IFuncionariosService>();
-            mockService.AddOrUpdate(Arg.Any<IEnumerable<FuncionarioDTO>>()).Returns(true);
+            mockService.AddOrUpdate(Arg.Any<IEnumerable<Funcionario>>()).Returns(true);
 
             var mockLog = Substitute.For<ILogger>();
 

@@ -1,33 +1,57 @@
 ﻿using ParticipacaoLucros.Models;
-using ParticipacaoLucros.Services.Helpers;
+using ParticipacaoLucros.Repositories;
 using RestSharp;
-using System;
 using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
+using System.Threading.Tasks;
+using System;
 
 namespace ParticipacaoLucros.Services
 {
     public interface IFuncionariosService
     {
-        bool AddOrUpdate(IEnumerable<FuncionarioDTO> lFuncionarios);
+        Task<bool> AddOrUpdate(IEnumerable<Funcionario> lFuncionarios);
     }
-    public class FuncionariosService : Firebase, IFuncionariosService
+    public class FuncionariosService : IFuncionariosService
     {
-        public FuncionariosService()
+        public IRepository<Funcionario> _funcionarioRepository { get; private set; }
+        public FuncionariosService(IRepository<Funcionario> funcionarioRepository)
         {
-            this.client = new RestClient(databaseAddress);
+            this._funcionarioRepository = funcionarioRepository;
         }
-        public FuncionariosService(RestClient _client)
+        public async Task<bool> AddOrUpdate(IEnumerable<Funcionario> lFuncionarios)
         {
-            this.client =_client;
+            try
+            {
+                return _funcionarioRepository.CreateList(lFuncionarios);
+
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
-        public bool AddOrUpdate(IEnumerable<FuncionarioDTO> lFuncionarios)
+
+        public async Task<RetornoLucros> CalculaLucros()
         {
-            var request = new RestRequest($".json", Method.POST);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("Content-Type", "application/json");
-            request.AddJsonBody(lFuncionarios);
-            IRestResponse response = client.Execute(request);
-            return response.IsSuccessful;
+            //lFuncionarios.ToList()
+            try
+            {
+                IEnumerable<Funcionario> LFuncionarios = await _funcionarioRepository.GetAll();
+                //var mapper = new MapperConfiguration(cfg => cfg.CreateMap<List<Funcionario>, IEnumerable<Funcionario>>()
+                //.ForMember(c => c.salario_bruto, m => m.MapFrom(s => Convert.ToDecimal(s.salario_bruto.Replace("R$", "")))))
+                //                .CreateMapper();
+                //var models = mapper.Map<List<Funcionario>>(lFuncionarios);
+                throw new NotImplementedException();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
+
+        
+
     }
 }
