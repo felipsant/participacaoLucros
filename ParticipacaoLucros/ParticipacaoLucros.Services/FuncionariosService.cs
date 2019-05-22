@@ -25,7 +25,6 @@ namespace ParticipacaoLucros.Services
             try
             {
                 return _funcionarioRepository.CreateList(lFuncionarios);
-
             }
             catch(Exception ex)
             {

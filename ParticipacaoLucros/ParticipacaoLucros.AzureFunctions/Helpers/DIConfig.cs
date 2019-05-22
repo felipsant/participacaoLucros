@@ -35,5 +35,3 @@ namespace ParticipacaoLucros.AzureFunctions.Helpers
         }
     }
 }
-
-//IRepository<Funcionario> funcionarioRepository
