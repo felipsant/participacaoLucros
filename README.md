@@ -27,9 +27,15 @@
 
 4 - Current Methods:
 
-    4.1 Funcionarios - Post or Put. Funcionarios/ 
+    4.1  http://localhost:7071/api/Funcionarios/ - Post or Put. 
     To register new Funcionarios over the solution
-    4.2 Funcionarios - Get. Funcionarios/ 
+
+    4.2 http://localhost:7071/api/Funcionarios/  - Get. 
     To see the current list of Funcionarios
-    4.3 Funcionarios_CalculaLucros - Get. Funcionarios/CalculaLucros/{total_disponibilizado} 
+
+    4.3 http://localhost:7071/api/Funcionarios/CalculaLucros/{total_disponibilizado} - Get. 
     To run the CalculaLucros and get the RetornoLucros model as return.
+
+    4.4 http://localhost:7071/api/OpenApi/ - Get.
+    To get the latest swagger file for the AZF.Project 
+    (This has to be updated manually, generating that file inside Azure API Management)
