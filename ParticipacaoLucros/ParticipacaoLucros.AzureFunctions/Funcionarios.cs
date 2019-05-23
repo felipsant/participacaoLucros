@@ -89,5 +89,35 @@ namespace ParticipacaoLucros.AzureFunctions
                 log.LogInformation("Funcionarios_GetAll finished a request.");
             }
         }
+
+        [FunctionName("Funcionarios_CalculaLucros")]
+        public static async Task<HttpResponseMessage> CalculaLucros(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Funcionarios/CalculaLucros/{total_disponibilizado}")] HttpRequest req,
+            decimal total_disponibilizado, ILogger log, [Inject] IFuncionariosService funcionariosService)
+        {
+            try
+            {
+                log.LogInformation("Funcionarios_GetAll started a request.");
+
+                var result = await funcionariosService.CalculaLucros(total_disponibilizado);
+                string json = JsonConvert.SerializeObject(result);
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(json, Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex.Message);
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(ex.Message, Encoding.UTF8)
+                };
+            }
+            finally
+            {
+                log.LogInformation("Funcionarios_GetAll finished a request.");
+            }
+        }
     }
 }

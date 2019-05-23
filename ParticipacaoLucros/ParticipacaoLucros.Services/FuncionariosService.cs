@@ -11,6 +11,7 @@ namespace ParticipacaoLucros.Services
     {
         Task<bool> AddOrUpdate(IEnumerable<Funcionario> lFuncionarios);
         Task<IEnumerable<Funcionario>> GetAll();
+        Task<RetornoLucros> CalculaLucros(decimal totalDisponibilizado);
     }
     public class FuncionariosService : IFuncionariosService
     {
