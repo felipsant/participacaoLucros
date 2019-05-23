@@ -1,5 +1,8 @@
 # Participação nos Lucros
 
+0 - Online working API
+    http://participacaolucrosazurefunctions-apim.azure-api.net/ParticipacaoLucrosAzureFunctions/
+
 1 - Running this Solution
 
     1.1 - Build and run the Dockerfile in cmd or terminal.
@@ -37,5 +40,6 @@
     To run the CalculaLucros and get the RetornoLucros model as return.
 
     4.4 http://localhost:7071/api/OpenApi/ - Get.
-    To get the latest swagger file for the AZF.Project 
-    (This has to be updated manually, generating that file inside Azure API Management)
+    To get the latest OpenApi swagger.json file for the AZF.Project 
+    (This has to be updated manually, generating the file inside Azure API Management)
+    
