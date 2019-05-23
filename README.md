@@ -1,6 +1,7 @@
 # Participação nos Lucros
 
 0 - Online working API
+
     http://participacaolucrosazurefunctions-apim.azure-api.net/ParticipacaoLucrosAzureFunctions/
 
 1 - Running this Solution
@@ -25,8 +26,8 @@
 
 3 - Database Interaction
 
-    3.1 - Only storing the last imported JSON is stored on Funcionario Post/Update Requests. 
-        I wrote a method Get so it's possible to see what Funcionarios currently are stored in the database. 
+    3.1 - Only stores and keeps in the database, the last imported JSON from Funcionario Post/Update Requests. 
+        There is the method Get to see what Funcionarios currently are stored in the persistence. 
 
 4 - Current Methods:
 
