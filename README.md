@@ -19,3 +19,14 @@
         Open the solution file ParticipacaoLucros.sln.
         Build it. In the Test Explorer Windows, both Integration and Unit Tests should appear.
         If you have a running solution, all the tests should pass.
+
+3 - Database Interaction
+
+    3.1 - Currently I am only saving the last result received by 
+    sending a Post Request to the method Funcionarios. 
+
+4 - Current Methods:
+    Funcionarios - Post or Update. Funcionarios/ To register new Funcionarios over the solution
+    Funcionarios - Get. Funcionarios/ To see the current list of Funcionarios
+    Funcionarios_CalculaLucros - Get. Funcionarios/CalculaLucros/{total_disponibilizado} To run the
+    CalculaLucros and get the RetornoLucros model as return.
