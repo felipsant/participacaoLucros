@@ -1,4 +1,4 @@
-[
+ï»¿[
   {
     "matricula": "0009968",
     "nome": "Victor Wilson",
@@ -19,7 +19,7 @@
     "matricula": "0008174",
     "nome": "Sherman Hodges",
     "area": "Relacionamento com o Cliente",
-    "cargo": "Líder de Relacionamento",
+    "cargo": "LÃ­der de Relacionamento",
     "salario_bruto": "R$ 3.899,74",
     "data_de_admissao": "2015-06-07"
   },
@@ -35,7 +35,7 @@
     "matricula": "0005253",
     "nome": "Wong Austin",
     "area": "Financeiro",
-    "cargo": "Economista Júnior",
+    "cargo": "Economista JÃºnior",
     "salario_bruto": "R$ 2.215,04",
     "data_de_admissao": "2016-08-27"
   },
@@ -50,7 +50,7 @@
   {
     "matricula": "0001843",
     "nome": "Daugherty Kramer",
-    "area": "Serviços Gerais",
+    "area": "ServiÃ§os Gerais",
     "cargo": "Atendente de Almoxarifado",
     "salario_bruto": "R$ 2.120,08",
     "data_de_admissao": "2016-04-21"
@@ -75,7 +75,7 @@
     "matricula": "0005961",
     "nome": "Jillian Odonnell",
     "area": "Contabilidade",
-    "cargo": "Contador Júnior",
+    "cargo": "Contador JÃºnior",
     "salario_bruto": "R$ 2.671,26",
     "data_de_admissao": "2016-09-08"
   },
@@ -91,7 +91,7 @@
     "matricula": "0002105",
     "nome": "Dorthy Lee",
     "area": "Financeiro",
-    "cargo": "Estagiário",
+    "cargo": "EstagiÃ¡rio",
     "salario_bruto": "R$ 1.491,45",
     "data_de_admissao": "2015-03-16"
   },
@@ -99,7 +99,7 @@
     "matricula": "0000273",
     "nome": "Petersen Coleman",
     "area": "Financeiro",
-    "cargo": "Estagiário",
+    "cargo": "EstagiÃ¡rio",
     "salario_bruto": "R$ 1.426,13",
     "data_de_admissao": "2016-09-20"
   },
@@ -146,7 +146,7 @@
   {
     "matricula": "0007676",
     "nome": "Maricela Martin",
-    "area": "Serviços Gerais",
+    "area": "ServiÃ§os Gerais",
     "cargo": "Copeiro",
     "salario_bruto": "R$ 1.591,69",
     "data_de_admissao": "2018-01-17"
@@ -155,7 +155,7 @@
     "matricula": "0002949",
     "nome": "Stephenson Stone",
     "area": "Financeiro",
-    "cargo": "Analista de Finanças",
+    "cargo": "Analista de FinanÃ§as",
     "salario_bruto": "R$ 5.694,14",
     "data_de_admissao": "2014-01-26"
   },
@@ -171,7 +171,7 @@
     "matricula": "0006877",
     "nome": "Cross Perkins",
     "area": "Relacionamento com o Cliente",
-    "cargo": "Líder de Ouvidoria",
+    "cargo": "LÃ­der de Ouvidoria",
     "salario_bruto": "R$ 3.371,47",
     "data_de_admissao": "2016-12-06"
   }
