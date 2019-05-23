@@ -26,7 +26,7 @@
     sending a Post Request to the method Funcionarios. 
 
 4 - Current Methods:
-    Funcionarios - Post or Update. Funcionarios/ To register new Funcionarios over the solution
+    Funcionarios - Post or Put. Funcionarios/ To register new Funcionarios over the solution
     Funcionarios - Get. Funcionarios/ To see the current list of Funcionarios
     Funcionarios_CalculaLucros - Get. Funcionarios/CalculaLucros/{total_disponibilizado} To run the
     CalculaLucros and get the RetornoLucros model as return.
