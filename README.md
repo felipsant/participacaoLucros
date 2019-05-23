@@ -1,6 +1,6 @@
 # Participação nos Lucros
 
-0 - Servers Online working API
+0 - Serveless Online working API
 
     http://participacaolucrosazurefunctions-apim.azure-api.net/ParticipacaoLucrosAzureFunctions/
 
