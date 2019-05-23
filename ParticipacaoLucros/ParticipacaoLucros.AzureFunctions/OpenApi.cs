@@ -17,14 +17,13 @@ namespace ParticipacaoLucros.AzureFunctions
         [FunctionName("OpenApi_GetAll")]
         public static async Task<HttpResponseMessage> GetAll(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "OpenApi")] HttpRequest req,
-            ILogger log)
+            ILogger log, ExecutionContext context)
         {
             try
             {
                 log.LogInformation("OpenApi_GetAll started a request.");
 
-                var currentDirectory = new DirectoryInfo(Environment.CurrentDirectory);
-                string jsonFile = currentDirectory + "\\" + "participacaolucrosazurefunctions.json";
+                string jsonFile = $"{context.FunctionAppDirectory}\\participacaolucrosazurefunctions.json";
                 string json = File.ReadAllText(jsonFile, Encoding.UTF8);
                 
                 return new HttpResponseMessage(HttpStatusCode.OK)

@@ -3,9 +3,9 @@
   "info": {
     "title": "ParticipacaoLucrosAzureFunctions",
     "version": "1.0",
-    "description": "Import from \"ParticipacaoLucrosAzureFunctions20190523111912\" Function App"
+    "description": "Import from \"ParticipacaoLucrosAzureFunctions\" Function App"
   },
-  "host": "plazurefunctions20190523111912-apim-westeurope-01.regional.azure-api.net",
+  "host": "your_apim_service_name.azure-api.net",
   "basePath": "/ParticipacaoLucrosAzureFunctions",
   "schemes": [
     "https"
@@ -31,6 +31,30 @@
     }
   ],
   "paths": {
+    "/Funcionarios": {
+      "put": {
+        "operationId": "put-funcionarios-addorupdate",
+        "summary": "Funcionarios_AddorUpdate",
+        "responses": {}
+      },
+      "post": {
+        "operationId": "post-funcionarios-addorupdate",
+        "summary": "Funcionarios_AddorUpdate",
+        "responses": {}
+      },
+      "get": {
+        "operationId": "get-funcionarios-getall",
+        "summary": "Funcionarios_GetAll",
+        "responses": {}
+      }
+    },
+    "/OpenApi": {
+      "get": {
+        "operationId": "get-openapi-getall",
+        "summary": "OpenApi_GetAll",
+        "responses": {}
+      }
+    },
     "/Funcionarios/CalculaLucros/{total_disponibilizado}": {
       "get": {
         "operationId": "get-funcionarios-calculalucros",
@@ -43,23 +67,6 @@
             "type": "string"
           }
         ],
-        "responses": {}
-      }
-    },
-    "/Funcionarios": {
-      "get": {
-        "operationId": "get-funcionarios-getall",
-        "summary": "Funcionarios_GetAll",
-        "responses": {}
-      },
-      "post": {
-        "operationId": "post-funcionarios-addorupdate",
-        "summary": "Funcionarios_AddorUpdate",
-        "responses": {}
-      },
-      "put": {
-        "operationId": "put-funcionarios-addorupdate",
-        "summary": "Funcionarios_AddorUpdate",
         "responses": {}
       }
     }
