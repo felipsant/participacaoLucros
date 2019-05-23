@@ -71,7 +71,7 @@ namespace ParticipacaoLucros.UnitTests.Services
             result.total_de_funcionarios.Should().Be(lFuncionarios.Count);
             result.participacoes.Count.Should().Be(lFuncionarios.Count);
             result.participacoes.First().matricula.Should().NotBe(string.Empty);
-            result.participacoes.First().valor_da_participação.Should().NotBe(0);
+            result.participacoes.First().valor_da_participação.Should().Be(182825.28m);
             result.participacoes.First().nome.Should().NotBe(string.Empty);
             result.total_disponibilizado.Should().Be(totalDisponibilizado);
             result.total_distribuido.Should().BeGreaterThan(0);
