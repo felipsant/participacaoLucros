@@ -1,0 +1,42 @@
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "args": ["/C"],
+    "isShellCommand": true,
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "0_build",
+            "args": ["make -C ${fileDirname} build"]
+        },
+        {
+            "taskName": "1_run",
+            "args": ["make -C ${fileDirname} run"]
+        },
+        {
+            "taskName": "2_stop",
+            "args": ["make -C ${fileDirname} stop"]
+        },        
+        {
+            "taskName": "3_clean",
+            "args": ["make -C ${fileDirname} clean"]
+        },
+        {
+            "taskName": "5_start",
+            "args": ["make -C ${fileDirname} start"]
+        },
+        {
+            "taskName": "8_logs",
+            "args": ["make -C ${fileDirname} logs"]
+        },
+        {
+            "taskName": "7_ps",
+            "args": ["make -C ${fileDirname} ps"]
+        },    
+        {
+            "taskName": "9_publish",
+            "args": ["make -C ${fileDirname} publish"]
+        }    
+    ]
+}

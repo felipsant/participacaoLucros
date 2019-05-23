@@ -23,7 +23,7 @@ namespace ParticipacaoLucros.AzureFunctions
     {
         [FunctionName("Funcionarios_AddorUpdate")]
         public static async Task<HttpResponseMessage> AddorUpdate(
-            [HttpTrigger(AuthorizationLevel.Function, "post","put", Route = "Funcionarios")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post","put", Route = "Funcionarios")] HttpRequest req,
             ILogger log, [Inject] IFuncionariosService funcionariosService)
         {
             try
@@ -61,7 +61,7 @@ namespace ParticipacaoLucros.AzureFunctions
         }
         [FunctionName("Funcionarios_GetAll")]
         public static async Task<HttpResponseMessage> GetAll(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Funcionarios")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "Funcionarios")] HttpRequest req,
             ILogger log, [Inject] IFuncionariosService funcionariosService)
         {
             try
@@ -92,7 +92,7 @@ namespace ParticipacaoLucros.AzureFunctions
 
         [FunctionName("Funcionarios_CalculaLucros")]
         public static async Task<HttpResponseMessage> CalculaLucros(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Funcionarios/CalculaLucros/{total_disponibilizado}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "Funcionarios/CalculaLucros/{total_disponibilizado}")] HttpRequest req,
             decimal total_disponibilizado, ILogger log, [Inject] IFuncionariosService funcionariosService)
         {
             try
