@@ -14,6 +14,7 @@
         Go on your browser to http://localhost:7071/ it should works.
 
 2 - Testing this Solution
+
     2.1 - Run Tests projects through Visual Studio 2019.
         Open the solution file ParticipacaoLucros.sln.
         Build it. In the Test Explorer Windows, both Integration and Unit Tests should appear.
