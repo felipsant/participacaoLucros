@@ -35,8 +35,7 @@ namespace ParticipacaoLucros.IntegrationTests
         private static List<Funcionario> getFuncionariosFromJSONFile()
         {
             var currentDirectory = new DirectoryInfo(Environment.CurrentDirectory);
-            string projectDirectory = currentDirectory.Parent.Parent.Parent.FullName;
-            string jsonFile = projectDirectory + "\\" + funcionariosJson;
+            string jsonFile = currentDirectory + "\\" + funcionariosJson;
 
             string json = File.ReadAllText(jsonFile, Encoding.UTF8);
             var lFuncionario = JsonConvert.DeserializeObject<List<Funcionario>>(json);

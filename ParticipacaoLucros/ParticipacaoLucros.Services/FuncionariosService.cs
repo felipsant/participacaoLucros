@@ -44,6 +44,7 @@ namespace ParticipacaoLucros.Services
             }
         }
 
+        #region CalculaLucros
         public async Task<RetornoLucros> CalculaLucros(decimal totalDisponibilizado)
         {
             try
@@ -121,7 +122,7 @@ namespace ParticipacaoLucros.Services
             Pesos.Add("Relacionamento com o Cliente", 5);
             return Pesos;
         }
-
+        #endregion
 
     }
 }

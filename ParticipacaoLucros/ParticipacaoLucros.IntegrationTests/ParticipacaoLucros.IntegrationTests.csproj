@@ -18,4 +18,10 @@
     <ProjectReference Include="..\ParticipacaoLucros.Models\ParticipacaoLucros.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="FuncionariosTest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,68 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ParticipacaoLucrosAzureFunctions",
+    "version": "1.0",
+    "description": "Import from \"ParticipacaoLucrosAzureFunctions20190523111912\" Function App"
+  },
+  "host": "plazurefunctions20190523111912-apim-westeurope-01.regional.azure-api.net",
+  "basePath": "/ParticipacaoLucrosAzureFunctions",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyHeader": {
+      "type": "apiKey",
+      "name": "Ocp-Apim-Subscription-Key",
+      "in": "header"
+    },
+    "apiKeyQuery": {
+      "type": "apiKey",
+      "name": "subscription-key",
+      "in": "query"
+    }
+  },
+  "security": [
+    {
+      "apiKeyHeader": []
+    },
+    {
+      "apiKeyQuery": []
+    }
+  ],
+  "paths": {
+    "/Funcionarios/CalculaLucros/{total_disponibilizado}": {
+      "get": {
+        "operationId": "get-funcionarios-calculalucros",
+        "summary": "Funcionarios_CalculaLucros",
+        "parameters": [
+          {
+            "name": "total_disponibilizado",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/Funcionarios": {
+      "get": {
+        "operationId": "get-funcionarios-getall",
+        "summary": "Funcionarios_GetAll",
+        "responses": {}
+      },
+      "post": {
+        "operationId": "post-funcionarios-addorupdate",
+        "summary": "Funcionarios_AddorUpdate",
+        "responses": {}
+      },
+      "put": {
+        "operationId": "put-funcionarios-addorupdate",
+        "summary": "Funcionarios_AddorUpdate",
+        "responses": {}
+      }
+    }
+  },
+  "tags": []
+}

@@ -22,8 +22,8 @@
 
 3 - Database Interaction
 
-    3.1 - Currently I am only saving the last result received by 
-    sending a Post Request to the method Funcionarios. 
+    3.1 - Only storing the last imported JSON is stored on Funcionario Post/Update Requests. 
+        I wrote a method Get so it's possible to see what Funcionarios currently are stored in the database. 
 
 4 - Current Methods:
 
